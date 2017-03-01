@@ -1,0 +1,96 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "automationAccounts_DevApiAutomation_name": {
+            "value": null
+        },
+        "virtualMachines_DevAPI6_adminPassword": {
+            "value": null
+        },
+        "variables_PWD_value": {
+            "value": null
+        },
+        "automationAccounts_DevApiAutomation_name_1": {
+            "value": null
+        },
+        "availabilitySets_DevApiASet_name": {
+            "value": null
+        },
+        "virtualMachines_DevAPI6_name": {
+            "value": null
+        },
+        "networkInterfaces_DevAPI6Nic_name": {
+            "value": null
+        },
+        "publicIPAddresses_devapi6publicip_name": {
+            "value": null
+        },
+        "trafficManagerProfiles_DevAPITest6TrafficManager_name": {
+            "value": null
+        },
+        "virtualNetworks_DevAPI6VNet_name": {
+            "value": null
+        },
+        "storageAccounts_devapi6storageacct_name": {
+            "value": null
+        },
+        "storageAccounts_devapi6testdatastorage_name": {
+            "value": null
+        },
+        "storageAccounts_vsemdevapideva022414510_name": {
+            "value": null
+        },
+        "modules_Azure_name": {
+            "value": null
+        },
+        "modules_Azure.Storage_name": {
+            "value": null
+        },
+        "modules_AzureRM.Automation_name": {
+            "value": null
+        },
+        "modules_AzureRM.Compute_name": {
+            "value": null
+        },
+        "modules_AzureRM.Profile_name": {
+            "value": null
+        },
+        "modules_AzureRM.Resources_name": {
+            "value": null
+        },
+        "modules_AzureRM.Sql_name": {
+            "value": null
+        },
+        "modules_AzureRM.Storage_name": {
+            "value": null
+        },
+        "modules_Microsoft.PowerShell.Core_name": {
+            "value": null
+        },
+        "modules_Microsoft.PowerShell.Diagnostics_name": {
+            "value": null
+        },
+        "modules_Microsoft.PowerShell.Management_name": {
+            "value": null
+        },
+        "modules_Microsoft.PowerShell.Security_name": {
+            "value": null
+        },
+        "modules_Microsoft.PowerShell.Utility_name": {
+            "value": null
+        },
+        "modules_Microsoft.WSMan.Management_name": {
+            "value": null
+        },
+        "modules_Orchestrator.AssetManagement.Cmdlets_name": {
+            "value": null
+        },
+        "variables_PWD_name": {
+            "value": null
+        },
+        "extensions_BGInfo_name": {
+            "value": null
+        }
+    }
+}
