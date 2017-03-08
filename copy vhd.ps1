@@ -1,4 +1,4 @@
-﻿
+﻿#https://www.opsgility.com/blog/windows-azure-powershell-reference-guide/copying-vhds-blobs-between-storage-accounts/
 $srcUri = "https://cmsvcstorageacct.blob.core.windows.net/vhds/cmSvcOsDisk1.vhd"
 $storageAccount = "cmsvcstorageacct"
 $storageKey = "VPoGg7pIpIKYnMqZOa2vSxyKWwlACBmJqHNPYsvzCrAqQ1GLTKjmiUBzSJiCiE4DlgrUwqD6/kkrycG9zS7tMA=="
