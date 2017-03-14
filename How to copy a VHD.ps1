@@ -20,3 +20,5 @@ Backup-VHD -storageAccount_Name "serviceappstorageacct" -srcUri "https://service
 Backup-VHD -storageAccount_Name "serviceappstorageacct" -srcUri "https://serviceappstorageacct.blob.core.windows.net/vhds/ServiceAppDataDisk1.vhd" `
     -storageKey "rtG5Wd8B+iV1yL8jXI4Y+0rwpGc8myedgIYG7DD4/LjpVjOQR3BlpK/K3k51EKS/kQ0l5lZ++q3OWQPIg9iGAA==" -BkupContainer_Name "bkupvhds"
 
+# The next thing I would like to do to this script is take the VM down, backup the images, then start up the VM
+# I could also save this in the appropriate structure, loading the details from a settings file etc. 
