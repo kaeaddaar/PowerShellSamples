@@ -1,0 +1,48 @@
+﻿{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "networkInterfaces_NetworkInterface_name": {
+            "defaultValue": "NetworkInterface",
+            "type": "String"
+        },
+        "testNumber": {
+            "defaultValue": "99",
+            "type": "String"
+        },
+        "virtualNetworks_VNet_name": {
+            "defaultValue": "VNet99",
+            "type": "String"
+        }
+
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/7261fdd2-889c-491b-8657-1ff32e1cac4b/resourceGroups/cmTemplate3/providers/Microsoft.Network/networkInterfaces/NetworkInterface'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_NetworkInterface_name')]",
+            "apiVersion": "2016-03-30",
+            "location": "westus2",
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAddress": "10.1.0.4",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_VNet_name')), '/subnets/Subnet_Name')]"
+                            }
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": []
+                },
+                "enableIPForwarding": false
+            },
+            "dependsOn": []
+        }
+    ]
+}

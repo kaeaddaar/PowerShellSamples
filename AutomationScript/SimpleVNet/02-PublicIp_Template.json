@@ -1,0 +1,32 @@
+﻿{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "publicIPAddresses_PublicIp_name": {
+            "defaultValue": "PublicIp",
+            "type": "String"
+        },
+        "testNumber": {
+            "defaultValue": "99",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/7261fdd2-889c-491b-8657-1ff32e1cac4b/resourceGroups/cmTemplate2/providers/Microsoft.Network/publicIPAddresses/PublicIp'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddresses_PublicIp_name')]",
+            "apiVersion": "2016-03-30",
+            "location": "westus2",
+            "properties": {
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "[concat('pipdnsname', parameters('TestNumber'))]"
+                }
+            },
+            "dependsOn": []
+        }
+    ]
+}

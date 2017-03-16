@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "virtualNetworks_VNet_name": {
-            "value": "VNet1"
+            "value": "VNet7"
         }
     }
 }

@@ -21,7 +21,7 @@ $StorageKey2 = "krs8eA2lVkEm6TP9Aua6JHJ5F8ceMMGObfb84Ko8YoiygqbSoOIqSKe/XiS8f8pw
 Backup-VHD -storageAccount_Name "serviceappstorageacct" -srcUri "https://sfmdemostorageacct.blob.core.windows.net/vhds/SFMdemoOsDisk1.vhd" `
     -storageKey $StorageKey -BkupContainer_Name "bkupvhds"
 
-Backup-VHD -storageAccount_Name "serviceappstorageacct" -srcUri "https://serviceappstorageacct.blob.core.windows.net/vhds/ServiceAppDataDisk1.vhd" `
+Backup-VHD -storageAccount_Name "serviceappstorageacct" -srcUri "https://sfmdemotestdatastorage.blob.core.windows.net/sfmdata/SFMdemodata.vhd" `
     -storageKey $StorageKey2 -BkupContainer_Name "bkupvhds"
 
 # The next thing I would like to do to this script is take the VM down, backup the images, then start up the VM

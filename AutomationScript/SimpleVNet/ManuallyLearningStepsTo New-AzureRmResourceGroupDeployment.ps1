@@ -1,4 +1,4 @@
-﻿Set-AuthenticodeSignature -Certificate @(Get-ChildItem Cert:\CurrentUser\my -CodeSigningCert)[0] -FilePath .\*.ps1
+﻿#Set-AuthenticodeSignature -Certificate @(Get-ChildItem Cert:\CurrentUser\my -CodeSigningCert)[0] -FilePath .\*.ps1
 
 Login-AzureRmAccount
 

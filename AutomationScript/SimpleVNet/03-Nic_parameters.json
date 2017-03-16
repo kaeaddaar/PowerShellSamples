@@ -1,0 +1,16 @@
+﻿{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "networkInterfaces_NetworkInterface_name": {
+            "value": "Nic"
+        },
+        "testNumber": {
+            "value": "7"
+        },
+        "virtualNetworks_VNet_name": {
+            "value": "VNet7"
+        }
+
+    }
+}
