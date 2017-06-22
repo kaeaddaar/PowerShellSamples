@@ -58,12 +58,14 @@ else { Write-Host ("The version number " + $s5Ver.FileVersion + " is good") }
 
 # does the DSN exist?
 # Can I get a list of DSN's 
-Get-OdbcDsn | Select-Object -Property "Name" | Sort-Object -Property "Name"
+#Get-OdbcDsn | Select-Object -Property "Name" | Sort-Object -Property "Name"
 # get list of pervasive 32-bit DSNs by looking at port number 1583
-$DSN = Get-OdbcDsn | Where-Object {$_.Attribute.TCPPort -eq "1583" -and $_.Platform -eq "32-bit"}
+#$DSN = Get-OdbcDsn | Where-Object {$_.Attribute.TCPPort -eq "1583" -and $_.Platform -eq "32-bit"}
+$DSN = Get-OdbcDsn | Where-Object {$_.DriverName -eq "Pervasive ODBC Engine Interface" -and $_.Platform -eq "32-bit"}
 $DSN | Select-Object -Property "Name"
 
-
+# To open odbc
+#ODBCAD32
 
 
 
