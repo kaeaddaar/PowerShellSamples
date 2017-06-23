@@ -1,8 +1,10 @@
-﻿Get-Service | Where-Object {$_.Name -like "SystemFiveZ*ETLService*"} | Select-Object -Property "Name"
-
-# Create an info hash table to store the data I gather
-
+﻿# Create an info hash table to store the data I gather
 $Info = @{}
+
+# save the service info
+#Get-Service | Where-Object {$_.Name -like "SystemFive*ETLService*"} | Select-Object -Property "Name"
+$Info["Service"] = Get-Service | Where-Object {$_.Name -like "SystemFive*ETLService*"}
+#$Info = @{}
 
 $Temp = Get-ChildItem -path 'Registry::HKEY_CURRENT_USER\SOFTWARE\Windward\System Five\'
 
@@ -37,12 +39,12 @@ foreach ($o in $obj)
 }
 $Choice = Read-Host "Enter a choice"
 
-$Obj[$Choice]
-$s5CompanyRegistry = $Obj[$Choice]
-$X = get-itemproperty -Path ("Registry::" + $s5CompanyRegistry.Name)
-"-----"
-$X.'(default)'
-"-----"
+#$Obj[$Choice]
+#$s5CompanyRegistry = $Obj[$Choice]
+#$X = get-itemproperty -Path ("Registry::" + $s5CompanyRegistry.Name)
+#"-----"
+#$X.'(default)'
+#"-----"
 
 $Info["CompanyName"] = $s5CompanyRegistry.FriendlyName
 
@@ -62,11 +64,20 @@ else { Write-Host ("The version number " + $s5Ver.FileVersion + " is good") }
 # get list of pervasive 32-bit DSNs by looking at port number 1583
 #$DSN = Get-OdbcDsn | Where-Object {$_.Attribute.TCPPort -eq "1583" -and $_.Platform -eq "32-bit"}
 $DSN = Get-OdbcDsn | Where-Object {$_.DriverName -eq "Pervasive ODBC Engine Interface" -and $_.Platform -eq "32-bit"}
+
 $DSN | Select-Object -Property "Name"
+
+# enumerate the $DSN and select one
 
 # To open odbc
 #ODBCAD32
 
+# Enable cloud integration flag (is it checked?), can I auto set it up?
 
+# Get the number of delta records before
 
+$Info["MD5Key"] = Read-Host -Prompt "Enter the MD5Key from setup wizard > Cloud Integration Settings > password key"
+
+# Create a user record in System Five with the appropriate settings called webuser
+# Create a user record in System Five with the appropriate settings called " wws5AppServer"
 
