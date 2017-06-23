@@ -3,7 +3,7 @@ $Info = @{}
 
 # save the service info
 #Get-Service | Where-Object {$_.Name -like "SystemFive*ETLService*"} | Select-Object -Property "Name"
-$Info["Service"] = Get-Service | Where-Object {$_.Name -like "SystemFive*ETLService*"}
+$Info["Service"] = Get-Service | Where-Object {$_.Name -like "*SystemFive*ETLService*"}
 #$Info = @{}
 
 $Temp = Get-ChildItem -path 'Registry::HKEY_CURRENT_USER\SOFTWARE\Windward\System Five\'
@@ -80,4 +80,5 @@ $Info["MD5Key"] = Read-Host -Prompt "Enter the MD5Key from setup wizard > Cloud 
 
 # Create a user record in System Five with the appropriate settings called webuser
 # Create a user record in System Five with the appropriate settings called " wws5AppServer"
+
 
