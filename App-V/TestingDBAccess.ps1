@@ -30,7 +30,7 @@ function ExecuteSqlQuery ($Server, $Database, $SQLQuery, $PSQLQuery) {
     $Datatable.Load($Reader)
     $Connection.Close()
     
-    #$OdbcConnection = New-Object System.Data.Odbc.OdbcConnection("Driver={ODBCCI64.DLL};Server=localhost;TrustedConnection=yes;Database=DemoData")
+    #$OdbcConnection = New-Object System.Data.Odbc.OdbcConnection("Driver={ODBCCI64.DLL};Server=localhost;TrustedConnection=yes;Database=DemoData") # still trying to get this one working.
     $OdbcConnection = New-Object System.Data.Odbc.OdbcConnection("DSN=DemoData")
     $OdbcConnection.Open()
 
