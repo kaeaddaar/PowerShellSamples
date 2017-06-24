@@ -81,4 +81,8 @@ $Info["MD5Key"] = Read-Host -Prompt "Enter the MD5Key from setup wizard > Cloud 
 # Create a user record in System Five with the appropriate settings called webuser
 # Create a user record in System Five with the appropriate settings called " wws5AppServer"
 
+<<<<<<< HEAD
+=======
+# Idea: Take a recordcount of delta > monitor the change > if it stops before getting to 0 send an alert. Check messaging for which scenario it is
+>>>>>>> origin/master
 
