@@ -1,12 +1,5 @@
 ﻿# Use TDD to build a PSScript that adds a record to the time tracking database
 
-$TestResults = @{}
-
-$TestResults["does_it_exist"] = test-does_it_exist
-$TestResults["does_it_succeed"] = test-does_it_succeed
-
-$TestResults
-
 # does is succeed
 function test-does_it_succeed()
 {
