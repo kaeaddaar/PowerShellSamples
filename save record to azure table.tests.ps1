@@ -1,16 +1,23 @@
 ﻿# Use TDD to build a PSScript that adds a record to the time tracking database
 
+# does it return a Data Table
+
 # does is succeed
-function test-does_it_succeed()
+function test-does_Add-SqlRecord_Return_DataTable()
 {
     # Arrange
-    [bool]$succeed = $false
+    [string]$TypeOf = ""
+    [System.Data.DataTable]$DataTable = New-Object System.Data.DataTable
+    [bool]$IsNull = $false
 
     # Act
-    $succeed = Add-AzureSqlRecord
-
+    $DataTable = New-Object System.Data.DataTable
+    $DataTable = Add-AzureSqlRecord
+    #$TypeOf = $DataTable.GetType()
+    
     # Assert
-    $succeed -eq $true
+    $DataTable -ne $null
+    #$TypeOf -eq "System.Data.DataTable"
 
 }
 

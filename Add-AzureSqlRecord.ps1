@@ -1,4 +1,6 @@
 ﻿function Add-AzureSqlRecord()
 {
-    return 1;
+    $Datatable = [PSCustomObject]@{ Name = 'System.Data.DataTable' }
+    
+    return $Datatable;
 }
