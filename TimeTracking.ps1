@@ -50,5 +50,5 @@ Task "TDD" -Start
 if ($false)
 {
     # Stops Task
-    Task "TDD"
+    Task "Remoting"
 }

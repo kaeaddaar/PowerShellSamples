@@ -1,0 +1,1 @@
+set-item wsman::localhost\Client\TrustedHosts SSJumpBox; Restart-Service WinRM; Set-NetFirewallRule –Name "WINRM-HTTP-In-TCP-PUBLIC" –RemoteAddress Any
