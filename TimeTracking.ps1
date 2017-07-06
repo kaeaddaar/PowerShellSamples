@@ -1,4 +1,10 @@
-﻿[string] $Server= "cmwws5sql.database.windows.net"
+﻿."C:\Users\playi\Documents\GitHub\PowerShellSamples\TimeTracking.functions.ps1"
+#Included functions:
+#function ExecuteSqlQuery ($Server, $Database, $SQLQuery) {
+#function Set-Task ([string]$Task50,[switch]$Start) # start or end a task
+#function get-ProjectList($Server, $Database, $credSql)
+
+[string] $Server= "cmwws5sql.database.windows.net"
 [string] $Database = "InternalTools"
 [string] $UserSqlQuery= $("SELECT * FROM [dbo].[TimeTracking_simple]")
 
@@ -11,37 +17,10 @@ if ($HaveCred -ne $true)
     $HaveCred = $true 
 }
 
-# executes a query and populates the $datatable with the data
-function ExecuteSqlQuery ($Server, $Database, $SQLQuery) {
-    $Datatable = New-Object System.Data.DataTable
-    
-    $Connection = New-Object System.Data.SQLClient.SQLConnection
-    #$Connection.ConnectionString = "server='$Server';database='$Database';trusted_connection=true;"
-    $Connection.Credential = $credSql
-    $Connection.ConnectionString = ("Server=tcp:" + $Server + ",1433;Database=" + $Database + ";Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;")
-    #$Connection.ConnectionString = ("Server Name=myServerAddress;Database Name=myDataBase;User ID=myUsername;Password=myPassword;")
- 
-    $Connection.Open()
-    $Command = New-Object System.Data.SQLClient.SQLCommand
-    $Command.Connection = $Connection
-    $Command.CommandText = $SQLQuery
-    $Command.ExecuteNonQuery()
-    $Connection.Close()
-    
-    return $Datatable
-}
 
 # declaration not necessary, but good practice
 $resultsDataTable = New-Object System.Data.DataTable
-$resultsDataTable = ExecuteSqlQuery $Server $Database $UserSqlQuery $UserPSqlQuery
-
-function Set-Task ([string]$Task50,[switch]$Start) # start or end a task
-{
-    [string]$StartEndDateTime = get-date -Format "yyyy-MM-dd HH:mm:ss"
-    if ($Start) { $TrueOrFalse = 1 } Else {$TrueOrFalse = 0}
-    $sql = ("INSERT INTO [dbo].[TimeTracking_simple] (Task, bStarting, StartEndDateTime) VALUES ('" + $Task50 + "', '" + $TrueOrFalse + "', '" + $StartEndDateTime + "' );")
-    ExecuteSqlQuery $Server $Database $sql
-}
+$resultsDataTable = ExecuteSqlNonQuery $Server $Database $UserSqlQuery $credSql
 
 if ($started -ne $true)
 {

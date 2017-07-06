@@ -1,0 +1,1 @@
+﻿net use [B: \\sssqldbcustbackupsauto.file.core.windows.net\customerbackups /u:AZURE\sssqldbcustbackupsauto z/hpT61XDLFEJ0DenyJfrIrAZsvcaBMRuz9sGYpo+yzGIEKa281cfUytEPoKjHjGkzSSZ9A0IdmyCaAX63fIHw==
