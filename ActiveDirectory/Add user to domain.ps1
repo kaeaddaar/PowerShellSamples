@@ -4,4 +4,5 @@ New-ADUser -SamAccountName $cred.UserName -AccountPassword $cred.Password -Canno
     -PasswordNeverExpires $true
 
 #Exit-PSSession
-`
+
+# https://technet.microsoft.com/en-us/library/ee617195.aspx
