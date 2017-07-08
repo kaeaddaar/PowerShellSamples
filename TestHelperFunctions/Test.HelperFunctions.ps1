@@ -21,7 +21,20 @@
 
 }
 
-#POC for Add-Test
+# Sample code for how to run tests
+if ($false)
+{
+    if ($ArrResults -eq $null)
+    {
+        $ArrResults = @()
+    }
+
+    Add-Test -ArrTestResults ([ref]$ArrResults) -Name "Test-ConnectionExists" -TestResult (Test-Connection-Exists) -Description "Simple test to see that we can create a System.Data.DataTable object"
+
+}
+
+
+# POC for Add-Test
 if ($false)
 {
     $ArrResults = @()
